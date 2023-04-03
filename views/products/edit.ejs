@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+</head>
+<body>
+    <h1>Edit a Product</h1>
+    <form action="/products/<%= product._id %>" method="post">
+        <label for="name">Nama Produk</label>
+        <input type="text" name="name" id="name" value="<%= product.name %>">
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" id="brand" value="<%= product.brand %>">
+        <label for="color">Warna</label>
+        <input type="text" name="color" id="color" value="<%= product.color %>">
+        <label for="price">Harga</label>
+        <input type="number" name="price" id="price" value="<%= product.price %>">
+        <label for="category">Kategori</label>
+        <select name="category" id="category">
+            <option value="Aksesoris" <%= product.category == 'Aksesoris' ? 'selected' : '' %>>Aksesoris</option>
+            <option value="Baju" <%= product.category == 'Baju' ? 'selected' : '' %>>Baju</option>
+            <option value="Celana" <%= product.category == 'Celana' ? 'selected' : '' %>>Celana</option>
+            <option value="Jaket" <%= product.category == 'Jaket' ? 'selected' : '' %>>Jaket</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
